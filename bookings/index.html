@@ -148,5 +148,35 @@
         </span></p></div></div></footer></div>
     <script>window.__INITIAL_STATE__={"data":null,"context":{}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());</script><script src="assets/js/app.b4859479.js" defer></script>
   
+<script>
+(function() {
+  function setupCookieBanner() {
+    var bannerKey = 'gps-cookie-dismissed';
+    var bannerCandidates = document.querySelectorAll('div.fixed.bottom-0');
+    bannerCandidates.forEach(function(banner) {
+      if (!banner.textContent.includes('cookies') || banner.dataset.cookieWired === '1') return;
+      banner.dataset.cookieWired = '1';
+      if (localStorage.getItem(bannerKey) === '1') {
+        banner.style.display = 'none';
+        return;
+      }
+      var btn = banner.querySelector('button');
+      if (btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          banner.style.display = 'none';
+          try { localStorage.setItem(bannerKey, '1'); } catch(_) {}
+        });
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupCookieBanner);
+  } else {
+    setupCookieBanner();
+  }
+  new MutationObserver(setupCookieBanner).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
 </body>
 </html>
