@@ -226,5 +226,26 @@
   }
 })();
 </script>
+<script>
+(function() {
+  function setupSurveySubmit() {
+    var form = document.getElementById('survey-form');
+    if (!form || form.dataset.submitWired === '1') return;
+    var checkbox = form.querySelector('input[type="checkbox"]');
+    var submitBtn = form.querySelector('button[type="submit"]');
+    if (!checkbox || !submitBtn) return;
+    form.dataset.submitWired = '1';
+    submitBtn.disabled = !checkbox.checked;
+    checkbox.addEventListener('change', function() {
+      submitBtn.disabled = !checkbox.checked;
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupSurveySubmit);
+  } else {
+    setupSurveySubmit();
+  }
+})();
+</script>
 </body>
 </html>
