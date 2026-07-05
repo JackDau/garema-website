@@ -178,5 +178,28 @@
   new MutationObserver(setupCookieBanner).observe(document.documentElement, { childList: true, subtree: true });
 })();
 </script>
+<script>
+(function() {
+  function setupMobileNav() {
+    var btn = document.getElementById('nav-icon');
+    var nav = btn && btn.nextElementSibling;
+    if (!btn || !nav || nav.tagName !== 'NAV' || btn.dataset.navWired === '1') return;
+    btn.dataset.navWired = '1';
+    var openClasses = ['flex', 'absolute', 'bg-gps-gray-lightest', 'shadow-lg', 'text-right', 'p-8', 'rounded-lg', 'm-6', 'right-0'];
+    var label = btn.querySelector('.sr-only');
+    btn.addEventListener('click', function() {
+      var isOpen = btn.classList.toggle('open');
+      nav.classList.toggle('hidden', !isOpen);
+      openClasses.forEach(function(c) { nav.classList.toggle(c, isOpen); });
+      if (label) label.textContent = (isOpen ? 'Close' : 'Open') + '\n      Menu';
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMobileNav);
+  } else {
+    setupMobileNav();
+  }
+})();
+</script>
 </body>
 </html>
