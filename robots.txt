@@ -41,6 +41,6 @@ Disallow: /
 
 # -----------------------------------------------------------------------
 # LLM context files
-#   https://www.garemaplacesurgery.com.au/llms.txt
-#   https://www.garemaplacesurgery.com.au/llms-full.txt
+#   https://garemaplacesurgery.com.au/llms.txt
+#   https://garemaplacesurgery.com.au/llms-full.txt
 # -----------------------------------------------------------------------
