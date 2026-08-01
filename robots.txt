@@ -6,6 +6,10 @@ User-agent: *
 Content-Signal: search=yes,ai-input=yes,ai-train=no
 Allow: /
 
+# Apex (no www) — this domain has no canonical tags, and www 301s to apex,
+# so the apex form avoids a needless redirect hop for crawlers.
+Sitemap: https://garemaplacesurgery.com.au/sitemap.xml
+
 # -----------------------------------------------------------------------
 # AI search & answer engines — ALLOWED
 # These cite the site in AI-generated answers and drive patient referrals.
