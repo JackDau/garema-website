@@ -47,5 +47,4 @@ As of 24 June 2026, Garema Place Surgery is part of the YourGP family, owned by 
 - [Location](https://garemaplacesurgery.com.au/location/): Address, building access, and map link
 - [Careers](https://garemaplacesurgery.com.au/careers/): GP, nursing, and admin team recruitment
 - [Contact Us](https://garemaplacesurgery.com.au/contact-us/): Contact details, practice manager, patient privacy and rights, and feedback
-- [Survey](https://garemaplacesurgery.com.au/survey/): Patient satisfaction survey form
 - [Privacy Policy](https://garemaplacesurgery.com.au/privacy-policy/): Website privacy policy
